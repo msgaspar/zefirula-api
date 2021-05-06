@@ -1,14 +1,11 @@
 import express from 'express';
 
+import { groupsRoutes } from './routes/groups.routes';
+
 const app = express();
 
-app.get('/', (request, response) => {
-  return response.json({ message: 'Hello, world' });
-});
+app.use(express.json());
 
-app.post('/clubs', (request, response) => {
-  const { name } = request.body;
-  return response.json({ name });
-});
+app.use(groupsRoutes);
 
 app.listen(3333, () => console.log('Server is running...'));
