@@ -1,6 +1,7 @@
 import { Router } from 'express';
 
-import { GroupsRepository } from '../repositories/GroupsRepository';
+import { GroupsRepository } from '../modules/groups/repositories/GroupsRepository';
+import { CreateGroupsService } from '../modules/groups/services/CreateGroupsService';
 
 const groupsRoutes = Router();
 const groupsRepository = new GroupsRepository();
@@ -8,9 +9,10 @@ const groupsRepository = new GroupsRepository();
 groupsRoutes.post('/', (request, response) => {
   const { name } = request.body;
 
-  const group = groupsRepository.create({ name });
+  const createGroupsService = new CreateGroupsService(groupsRepository);
+  createGroupsService.execute({ name });
 
-  return response.status(201).json({ group });
+  return response.status(200).send();
 });
 
 groupsRoutes.get('/', (request, response) => {

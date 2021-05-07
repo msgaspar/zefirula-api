@@ -1,10 +1,11 @@
 import { Group } from '../model/Group';
+import { IGroupsRepository } from './IGroupsRepository';
 
 interface ICreateCategoryDTO {
   name: string;
 }
 
-class GroupsRepository {
+class GroupsRepository implements IGroupsRepository {
   private groups: Group[];
 
   constructor() {
@@ -21,6 +22,11 @@ class GroupsRepository {
 
   list(): Group[] {
     return this.groups;
+  }
+
+  findByName(name: string): Group {
+    const group = this.groups.find(group => group.name === name);
+    return group;
   }
 }
 
