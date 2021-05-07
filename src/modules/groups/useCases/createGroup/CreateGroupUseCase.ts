@@ -1,10 +1,10 @@
-import { IGroupsRepository } from '../repositories/IGroupsRepository';
+import { IGroupsRepository } from '../../repositories/IGroupsRepository';
 
 interface IRequest {
   name: string;
 }
 
-class CreateGroupsService {
+class CreateGroupUseCase {
   constructor(private groupsRepository: IGroupsRepository) {}
 
   execute({ name }: IRequest): void {
@@ -18,4 +18,4 @@ class CreateGroupsService {
   }
 }
 
-export { CreateGroupsService };
+export { CreateGroupUseCase };

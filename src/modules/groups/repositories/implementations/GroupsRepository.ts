@@ -1,5 +1,5 @@
-import { Group } from '../model/Group';
-import { IGroupsRepository } from './IGroupsRepository';
+import { Group } from '../../model/Group';
+import { IGroupsRepository } from '../IGroupsRepository';
 
 interface ICreateCategoryDTO {
   name: string;
@@ -8,8 +8,17 @@ interface ICreateCategoryDTO {
 class GroupsRepository implements IGroupsRepository {
   private groups: Group[];
 
-  constructor() {
+  private static INSTANCE: GroupsRepository;
+
+  private constructor() {
     this.groups = [];
+  }
+
+  public static getInstance(): GroupsRepository {
+    if (!GroupsRepository.INSTANCE) {
+      GroupsRepository.INSTANCE = new GroupsRepository();
+    }
+    return GroupsRepository.INSTANCE;
   }
 
   create({ name }: ICreateCategoryDTO): Group {
