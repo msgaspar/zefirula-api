@@ -36,6 +36,28 @@
             "description": "Category already exists"
           }
         }
+      },
+      "get": {
+        "tags": ["League"],
+        "summary": "List leagues",
+        "description": "List all leagues",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
