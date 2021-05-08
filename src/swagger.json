@@ -4,5 +4,39 @@
     "title": "ZeFirula API Documentation",
     "description": "Documentation for the ZeFirula Cartola League Management API",
     "version": "0.1.0"
+  },
+  "paths": {
+    "/leagues": {
+      "post": {
+        "tags": ["League"],
+        "summary": "Create league",
+        "description": "Create a new league",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { 
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "name": "New League Name"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Category already exists"
+          }
+        }
+      }
+    }
   }
 }
