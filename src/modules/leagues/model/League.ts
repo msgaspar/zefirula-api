@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
-class Group {
+class League {
   id?: string;
   name: string;
   created_at: Date;
@@ -16,4 +16,4 @@ class Group {
   }
 }
 
-export { Group };
+export { League };

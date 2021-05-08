@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
-import { groupsRoutes } from './groups.routes';
+import { leaguesRoutes } from './leagues.routes';
 
 const router = Router();
 
-router.use('/groups', groupsRoutes);
+router.use('/leagues', leaguesRoutes);
 
 export { router };
