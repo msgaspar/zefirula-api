@@ -1,14 +1,20 @@
+import { inject, injectable } from 'tsyringe';
+
 import { ILeaguesRepository } from '../../repositories/ILeaguesRepository';
 
 interface IRequest {
   name: string;
 }
 
+@injectable()
 class CreateLeagueUseCase {
-  constructor(private leaguesRepository: ILeaguesRepository) {}
+  constructor(
+    @inject('LeaguesRepository')
+    private leaguesRepository: ILeaguesRepository,
+  ) {}
 
-  execute({ name }: IRequest): void {
-    const leagueAlreadyExists = this.leaguesRepository.findByName(name);
+  async execute({ name }: IRequest): Promise<void> {
+    const leagueAlreadyExists = await this.leaguesRepository.findByName(name);
 
     if (leagueAlreadyExists) {
       throw new Error('League already exists');

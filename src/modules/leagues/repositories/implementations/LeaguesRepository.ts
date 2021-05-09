@@ -1,4 +1,6 @@
-import { League } from '../../model/League';
+import { getRepository, Repository } from 'typeorm';
+
+import { League } from '../../entities/League';
 import { ILeaguesRepository } from '../ILeaguesRepository';
 
 interface ICreateCategoryDTO {
@@ -6,35 +8,25 @@ interface ICreateCategoryDTO {
 }
 
 class LeaguesRepository implements ILeaguesRepository {
-  private leagues: League[];
+  private repository: Repository<League>;
 
-  private static INSTANCE: LeaguesRepository;
-
-  private constructor() {
-    this.leagues = [];
+  constructor() {
+    this.repository = getRepository(League);
   }
 
-  public static getInstance(): LeaguesRepository {
-    if (!LeaguesRepository.INSTANCE) {
-      LeaguesRepository.INSTANCE = new LeaguesRepository();
-    }
-    return LeaguesRepository.INSTANCE;
+  async create({ name }: ICreateCategoryDTO): Promise<void> {
+    const league = this.repository.create({ name });
+
+    await this.repository.save(league);
   }
 
-  create({ name }: ICreateCategoryDTO): League {
-    const league = new League(name);
-
-    this.leagues.push(league);
-
-    return league;
+  async list(): Promise<League[]> {
+    const leagues = await this.repository.find();
+    return leagues;
   }
 
-  list(): League[] {
-    return this.leagues;
-  }
-
-  findByName(name: string): League {
-    const league = this.leagues.find(league => league.name === name);
+  async findByName(name: string): Promise<League> {
+    const league = this.repository.findOne({ name });
     return league;
   }
 }

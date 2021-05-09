@@ -1,16 +1,14 @@
 import { Router } from 'express';
 
-import { createLeagueController } from '../modules/leagues/useCases/createLeague';
-import { listLeaguesController } from '../modules/leagues/useCases/listLeagues';
+import { CreateLeagueController } from '../modules/leagues/useCases/createLeague/CreateLeagueController';
+import { ListLeaguesController } from '../modules/leagues/useCases/listLeagues/ListLeaguesController';
 
 const leaguesRoutes = Router();
 
-leaguesRoutes.post('/', (request, response) => {
-  return createLeagueController.handle(request, response);
-});
+const createLeagueController = new CreateLeagueController();
+leaguesRoutes.post('/', createLeagueController.handle);
 
-leaguesRoutes.get('/', (request, response) => {
-  return listLeaguesController.handle(request, response);
-});
+const listLeaguesController = new ListLeaguesController();
+leaguesRoutes.get('/', listLeaguesController.handle);
 
 export { leaguesRoutes };

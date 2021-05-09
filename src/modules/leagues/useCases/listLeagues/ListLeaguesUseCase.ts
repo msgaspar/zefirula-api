@@ -1,10 +1,16 @@
-import { League } from '../../model/League';
+import { inject, injectable } from 'tsyringe';
+
+import { League } from '../../entities/League';
 import { ILeaguesRepository } from '../../repositories/ILeaguesRepository';
 
+@injectable()
 class ListLeaguesUseCase {
-  constructor(private leaguesRepository: ILeaguesRepository) {}
+  constructor(
+    @inject('LeaguesRepository')
+    private leaguesRepository: ILeaguesRepository,
+  ) {}
 
-  execute(): League[] {
+  async execute(): Promise<League[]> {
     return this.leaguesRepository.list();
   }
 }

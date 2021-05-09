@@ -2566,7 +2566,12 @@
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
 
-"tslib@^2.1.0":
+"tslib@^1.9.3":
+  "integrity" "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg=="
+  "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
+  "version" "1.14.1"
+
+"tslib@^2.1.0", "tslib@^2.2.0":
   "integrity" "sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.2.0.tgz"
   "version" "2.2.0"
@@ -2577,6 +2582,13 @@
   "version" "3.21.0"
   dependencies:
     "tslib" "^1.8.1"
+
+"tsyringe@^4.5.0":
+  "integrity" "sha512-XvYgdUxkmGQfpCkKyr/ybJx71OLSnNec1SO0xdohMjaS2UOEyKi76YfKx92XUXgc1TocypHENg6y4wCyYyMKag=="
+  "resolved" "https://registry.npmjs.org/tsyringe/-/tsyringe-4.5.0.tgz"
+  "version" "4.5.0"
+  dependencies:
+    "tslib" "^1.9.3"
 
 "type-check@^0.4.0", "type-check@~0.4.0":
   "integrity" "sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew=="

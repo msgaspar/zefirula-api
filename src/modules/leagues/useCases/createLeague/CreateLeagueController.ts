@@ -1,14 +1,15 @@
 import { Request, Response } from 'express';
+import { container } from 'tsyringe';
 
 import { CreateLeagueUseCase } from './CreateLeagueUseCase';
 
 class CreateLeagueController {
-  constructor(private createLeagueUseCase: CreateLeagueUseCase) {}
-
-  handle(request: Request, response: Response): Response {
+  async handle(request: Request, response: Response): Promise<Response> {
     const { name } = request.body;
 
-    this.createLeagueUseCase.execute({ name });
+    const createLeagueUseCase = container.resolve(CreateLeagueUseCase);
+
+    await createLeagueUseCase.execute({ name });
 
     return response.status(201).send();
   }
