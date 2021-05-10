@@ -6,9 +6,9 @@ import { ListLeaguesController } from '../modules/leagues/useCases/listLeagues/L
 const leaguesRoutes = Router();
 
 const createLeagueController = new CreateLeagueController();
-leaguesRoutes.post('/', createLeagueController.handle);
-
 const listLeaguesController = new ListLeaguesController();
+
+leaguesRoutes.post('/', createLeagueController.handle);
 leaguesRoutes.get('/', listLeaguesController.handle);
 
 export { leaguesRoutes };
