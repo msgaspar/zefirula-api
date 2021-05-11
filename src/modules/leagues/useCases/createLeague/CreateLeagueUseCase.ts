@@ -1,5 +1,6 @@
 import { inject, injectable } from 'tsyringe';
 
+import { AppError } from '../../../../errors/AppError';
 import { ILeaguesRepository } from '../../repositories/ILeaguesRepository';
 
 interface IRequest {
@@ -17,7 +18,7 @@ class CreateLeagueUseCase {
     const leagueAlreadyExists = await this.leaguesRepository.findByName(name);
 
     if (leagueAlreadyExists) {
-      throw new Error('League already exists');
+      throw new AppError('League already exists');
     }
 
     this.leaguesRepository.create({ name });
