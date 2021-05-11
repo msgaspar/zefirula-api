@@ -1,7 +1,7 @@
 import { inject, injectable } from 'tsyringe';
 
-import { League } from '../../entities/League';
-import { ILeaguesRepository } from '../../repositories/ILeaguesRepository';
+import { League } from '@modules/leagues/entities/League';
+import { ILeaguesRepository } from '@modules/leagues/repositories/ILeaguesRepository';
 
 @injectable()
 class ListLeaguesUseCase {

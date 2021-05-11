@@ -1,7 +1,7 @@
 import { getRepository, Repository } from 'typeorm';
 
-import { League } from '../../entities/League';
-import { ILeaguesRepository } from '../ILeaguesRepository';
+import { League } from '@modules/leagues/infra/typeorm/entities/League';
+import { ILeaguesRepository } from '@modules/leagues/repositories/ILeaguesRepository';
 
 interface ICreateCategoryDTO {
   name: string;
