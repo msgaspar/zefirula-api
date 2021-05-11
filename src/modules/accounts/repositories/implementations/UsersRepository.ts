@@ -9,6 +9,11 @@ class UsersRepository implements IUsersRepository {
   constructor() {
     this.repository = getRepository(User);
   }
+
+  async findByUsername(username: string): Promise<User> {
+    const user = this.repository.findOne({ username });
+    return user;
+  }
 }
 
 export { UsersRepository };
