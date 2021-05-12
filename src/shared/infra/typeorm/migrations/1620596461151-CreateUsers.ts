@@ -1,6 +1,4 @@
-import { hash } from 'bcrypt';
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
-import { v4 as uuidv4 } from 'uuid';
 
 export class CreateUsers1620596461151 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -39,21 +37,6 @@ export class CreateUsers1620596461151 implements MigrationInterface {
         ],
       }),
     );
-
-    const hashedAdminPassword = await hash('admin', 8);
-
-    await queryRunner.manager
-      .createQueryBuilder()
-      .insert()
-      .into('users')
-      .values({
-        id: uuidv4(),
-        name: 'Admin',
-        username: 'admin',
-        password: hashedAdminPassword,
-        isAdmin: true,
-      })
-      .execute();
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
