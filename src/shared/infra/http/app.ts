@@ -8,10 +8,13 @@ import createConnection from '@shared/infra/typeorm';
 import '../../container';
 
 import { AppError } from '../../errors/AppError';
+import rateLimiter from './middlewares/rateLimiter';
 import { router } from './routes';
 
 createConnection();
 const app = express();
+
+app.use(rateLimiter);
 
 app.use(express.json());
 
