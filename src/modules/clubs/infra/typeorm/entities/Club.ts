@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity('clubs')
 class Club {
@@ -13,6 +13,9 @@ class Club {
 
   @Column()
   badgeImageUrl: string;
+
+  @CreateDateColumn()
+  created_at: Date;
 }
 
 export { Club };

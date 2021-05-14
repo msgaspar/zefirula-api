@@ -1,4 +1,4 @@
-import { League } from '../entities/League';
+import { League } from '@modules/leagues/infra/typeorm/entities/League';
 
 interface ICreateLeagueDTO {
   name: string;
