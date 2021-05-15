@@ -2,7 +2,7 @@ interface ICreateClubDTO {
   id: string;
   name: string;
   cartoleiro: string;
-  badgeImageUrl: string;
+  badgeImgUrl: string;
 }
 
 export { ICreateClubDTO };

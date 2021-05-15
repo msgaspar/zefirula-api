@@ -4,6 +4,8 @@ import { UsersRepository } from '@modules/accounts/infra/typeorm/repositories/Us
 import { UsersTokensRepository } from '@modules/accounts/infra/typeorm/repositories/UsersTokensRepository';
 import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
 import { IUsersTokensRepository } from '@modules/accounts/repositories/IUsersTokensRepository';
+import { ClubsRepository } from '@modules/clubs/infra/typeorm/repositories/ClubsRepository';
+import { IClubsRepository } from '@modules/clubs/repositories/IClubsRepository';
 import { LeaguesRepository } from '@modules/leagues/infra/typeorm/repositories/LeaguesRepository';
 import { ILeaguesRepository } from '@modules/leagues/repositories/ILeaguesRepository';
 
@@ -17,3 +19,5 @@ container.registerSingleton<IUsersTokensRepository>(
   'UsersTokensRepository',
   UsersTokensRepository,
 );
+
+container.registerSingleton<IClubsRepository>('ClubsRepository', ClubsRepository);

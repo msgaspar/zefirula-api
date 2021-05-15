@@ -21,7 +21,7 @@ class CreateLeagueUseCase {
       throw new AppError('League already exists');
     }
 
-    this.leaguesRepository.create({ name });
+    await this.leaguesRepository.create({ name });
   }
 }
 

@@ -12,7 +12,7 @@ class Club {
   cartoleiro: string;
 
   @Column()
-  badgeImageUrl: string;
+  badgeImgUrl: string;
 
   @CreateDateColumn()
   created_at: Date;
