@@ -1,6 +1,6 @@
 import { inject, injectable } from 'tsyringe';
 
-import { League } from '@modules/leagues/entities/League';
+import { League } from '@modules/leagues/infra/typeorm/entities/League';
 import { ILeaguesRepository } from '@modules/leagues/repositories/ILeaguesRepository';
 
 @injectable()

@@ -4,8 +4,15 @@ interface ICartolaClubData {
   badgeImgUrl: string;
 }
 
-interface ICartolaProvider {
-  getClubData(id: string): Promise<ICartolaClubData>;
+interface ICartolaSearchResult {
+  id: string;
+  cartoleiro: string;
+  name: string;
 }
 
-export { ICartolaProvider, ICartolaClubData };
+interface ICartolaProvider {
+  getClubData(id: string): Promise<ICartolaClubData>;
+  searchClubs(query: string): Promise<ICartolaSearchResult[]>;
+}
+
+export { ICartolaProvider, ICartolaClubData, ICartolaSearchResult };
