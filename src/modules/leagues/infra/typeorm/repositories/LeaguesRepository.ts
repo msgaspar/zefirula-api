@@ -1,9 +1,12 @@
 import { getRepository, Repository } from 'typeorm';
 
 import { League } from '@modules/leagues/infra/typeorm/entities/League';
-import { ILeaguesRepository } from '@modules/leagues/repositories/ILeaguesRepository';
+import {
+  ILeagueListItem,
+  ILeaguesRepository,
+} from '@modules/leagues/repositories/ILeaguesRepository';
 
-interface ICreateCategoryDTO {
+interface ICreateLeagueDTO {
   name: string;
 }
 
@@ -14,19 +17,27 @@ class LeaguesRepository implements ILeaguesRepository {
     this.repository = getRepository(League);
   }
 
-  async create({ name }: ICreateCategoryDTO): Promise<void> {
-    const league = this.repository.create({ name });
+  async create({ name }: ICreateLeagueDTO): Promise<void> {
+    const clubs = [];
+    const league = this.repository.create({ name, clubs });
 
     await this.repository.save(league);
   }
 
-  async list(): Promise<League[]> {
-    const leagues = await this.repository.find();
-    return leagues;
+  async listAll(): Promise<ILeagueListItem[]> {
+    const list = await this.repository.query(
+      'SELECT leagues.id, leagues.name, count(leagues_clubs.league_id) AS clubs_count FROM leagues LEFT JOIN leagues_clubs ON (leagues.id = leagues_clubs.league_id) GROUP BY leagues.id',
+    );
+    return list;
   }
 
   async findByName(name: string): Promise<League> {
-    const league = this.repository.findOne({ name });
+    const league = await this.repository.findOne({ name });
+    return league;
+  }
+
+  async findById(id: string): Promise<League> {
+    const league = await this.repository.findOne(id);
     return league;
   }
 }

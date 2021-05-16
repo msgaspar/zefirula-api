@@ -4,10 +4,17 @@ interface ICreateLeagueDTO {
   name: string;
 }
 
+interface ILeagueListItem {
+  id: string;
+  name: string;
+  clubs_count: number;
+}
+
 interface ILeaguesRepository {
   findByName(name: string): Promise<League>;
-  list(): Promise<League[]>;
+  findById(id: string): Promise<League>;
+  listAll(): Promise<ILeagueListItem[]>;
   create({ name }: ICreateLeagueDTO): Promise<void>;
 }
 
-export { ILeaguesRepository, ICreateLeagueDTO };
+export { ILeaguesRepository, ICreateLeagueDTO, ILeagueListItem };

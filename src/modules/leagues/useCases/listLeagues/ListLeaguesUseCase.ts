@@ -1,7 +1,9 @@
 import { inject, injectable } from 'tsyringe';
 
-import { League } from '@modules/leagues/infra/typeorm/entities/League';
-import { ILeaguesRepository } from '@modules/leagues/repositories/ILeaguesRepository';
+import {
+  ILeagueListItem,
+  ILeaguesRepository,
+} from '@modules/leagues/repositories/ILeaguesRepository';
 
 @injectable()
 class ListLeaguesUseCase {
@@ -10,8 +12,8 @@ class ListLeaguesUseCase {
     private leaguesRepository: ILeaguesRepository,
   ) {}
 
-  async execute(): Promise<League[]> {
-    return this.leaguesRepository.list();
+  async execute(): Promise<ILeagueListItem[]> {
+    return this.leaguesRepository.listAll();
   }
 }
 

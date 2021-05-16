@@ -11,14 +11,24 @@ class ClubsRepository implements IClubsRepository {
     this.repository = getRepository(Club);
   }
 
-  async create({ id, name, cartoleiro, badgeImgUrl }: ICreateClubDTO): Promise<void> {
-    const club = this.repository.create({ id, name, cartoleiro, badgeImgUrl });
-    await this.repository.save(club);
+  async create({
+    id,
+    name,
+    cartoleiro,
+    badgeImgUrl,
+    leagues = [],
+  }: ICreateClubDTO): Promise<Club> {
+    const club = this.repository.create({ id, name, cartoleiro, badgeImgUrl, leagues });
+    return this.repository.save(club);
   }
 
   async findById(id: string): Promise<Club> {
-    const club = await this.repository.findOne(id);
+    const club = await this.repository.findOne(id, { relations: ['leagues'] });
     return club;
+  }
+
+  async save(club: Club): Promise<void> {
+    await this.repository.save(club);
   }
 }
 
