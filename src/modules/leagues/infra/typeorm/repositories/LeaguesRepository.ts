@@ -37,7 +37,7 @@ class LeaguesRepository implements ILeaguesRepository {
   }
 
   async findById(id: string): Promise<League> {
-    const league = await this.repository.findOne(id);
+    const league = await this.repository.findOne(id, { relations: ['clubs'] });
     return league;
   }
 }

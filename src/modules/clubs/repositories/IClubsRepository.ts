@@ -5,6 +5,7 @@ interface IClubsRepository {
   create(data: ICreateClubDTO): Promise<Club>;
   save(club: Club): Promise<void>;
   findById(id: string): Promise<Club>;
+  delete(id: string): Promise<void>;
 }
 
 export { IClubsRepository };

@@ -30,6 +30,10 @@ class ClubsRepository implements IClubsRepository {
   async save(club: Club): Promise<void> {
     await this.repository.save(club);
   }
+
+  async delete(id: string): Promise<void> {
+    await this.repository.delete(id);
+  }
 }
 
 export { ClubsRepository };

@@ -30,8 +30,8 @@ export class CreateLeaguesClubs1621085551219 implements MigrationInterface {
         referencedTableName: 'leagues',
         referencedColumnNames: ['id'],
         columnNames: ['league_id'],
-        onDelete: 'SET NULL',
-        onUpdate: 'SET NULL',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
       }),
     );
 
@@ -42,8 +42,8 @@ export class CreateLeaguesClubs1621085551219 implements MigrationInterface {
         referencedTableName: 'clubs',
         referencedColumnNames: ['id'],
         columnNames: ['club_id'],
-        onDelete: 'SET NULL',
-        onUpdate: 'SET NULL',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
       }),
     );
   }
