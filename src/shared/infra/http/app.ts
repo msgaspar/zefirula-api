@@ -1,11 +1,14 @@
 import 'reflect-metadata';
 import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
+import cron from 'node-cron';
 import 'express-async-errors';
 
 import createConnection from '@shared/infra/typeorm';
 
 import '../../container';
+
+import { UpdateScoresController } from '@modules/system/useCases/updateScores/UpdateScoresController';
 
 import { AppError } from '../../errors/AppError';
 import rateLimiter from './middlewares/rateLimiter';
@@ -32,6 +35,11 @@ app.use((err: Error, request: Request, response: Response, _next: NextFunction) 
     status: 'error',
     message: `Internal server error - ${err.message}`,
   });
+});
+
+const updateScoresController = new UpdateScoresController();
+cron.schedule('0,15,30,45 * * * * *', () => {
+  updateScoresController.handle();
 });
 
 export { app };

@@ -10,6 +10,8 @@ import { LeaguesRepository } from '@modules/leagues/infra/typeorm/repositories/L
 import { ILeaguesRepository } from '@modules/leagues/repositories/ILeaguesRepository';
 
 import './providers';
+import { StatusParamsRepository } from '@modules/system/infra/typeorm/repositories/StatusParamsRepository';
+import { IStatusParamsRepository } from '@modules/system/repositories/IStatusParamsRepository';
 
 container.registerSingleton<ILeaguesRepository>('LeaguesRepository', LeaguesRepository);
 
@@ -21,3 +23,8 @@ container.registerSingleton<IUsersTokensRepository>(
 );
 
 container.registerSingleton<IClubsRepository>('ClubsRepository', ClubsRepository);
+
+container.registerSingleton<IStatusParamsRepository>(
+  'StatusParamsRepository',
+  StatusParamsRepository,
+);

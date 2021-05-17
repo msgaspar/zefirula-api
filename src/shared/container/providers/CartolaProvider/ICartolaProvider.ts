@@ -13,6 +13,7 @@ interface ICartolaSearchResult {
 interface ICartolaProvider {
   getClubData(id: string): Promise<ICartolaClubData>;
   searchClubs(query: string): Promise<ICartolaSearchResult[]>;
+  getCurrentRound(): Promise<number>;
 }
 
 export { ICartolaProvider, ICartolaClubData, ICartolaSearchResult };

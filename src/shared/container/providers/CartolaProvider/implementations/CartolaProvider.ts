@@ -24,6 +24,11 @@ class CartolaProvider implements ICartolaProvider {
       name: result.nome,
     }));
   }
+
+  async getCurrentRound(): Promise<number> {
+    const { data } = await axios.get(`https://api.cartolafc.globo.com/mercado/status`);
+    return Number(data.rodada_atual);
+  }
 }
 
 export { CartolaProvider };
