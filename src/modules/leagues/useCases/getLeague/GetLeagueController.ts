@@ -5,11 +5,11 @@ import { GetLeagueUseCase } from './GetLeagueUseCase';
 
 class GetLeagueController {
   async handle(request: Request, response: Response): Promise<Response> {
-    const { leagueId } = request.params;
+    const { leagueId, round } = request.params;
 
     const getLeagueUseCase = container.resolve(GetLeagueUseCase);
 
-    const league = await getLeagueUseCase.execute(leagueId);
+    const league = await getLeagueUseCase.execute(leagueId, Number(round));
 
     return response.json(league);
   }

@@ -12,6 +12,10 @@ class ScoresRepository implements IScoresRepository {
     this.repository = getRepository(Score);
   }
 
+  get(clubId: string, round: number): Promise<Score> {
+    return this.repository.findOne({ club_id: clubId, round });
+  }
+
   async findByClubId(clubId: string): Promise<Score[]> {
     return this.repository.find({ club_id: clubId });
   }

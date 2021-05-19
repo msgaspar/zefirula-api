@@ -22,6 +22,7 @@ leaguesRoutes.post('/', createLeagueController.handle);
 leaguesRoutes.get('/', listLeaguesController.handle);
 leaguesRoutes.post('/:leagueId', registerClubController.handle);
 leaguesRoutes.delete('/:leagueId/:clubId', removeClubController.handle);
-leaguesRoutes.get('/:leagueId', getLeagueController.handle);
+leaguesRoutes.get('/:leagueId/', getLeagueController.handle);
+leaguesRoutes.get('/:leagueId/:round', getLeagueController.handle);
 
 export { leaguesRoutes };
