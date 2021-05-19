@@ -4,10 +4,13 @@ import {
   Entity,
   JoinTable,
   ManyToMany,
+  OneToMany,
   PrimaryColumn,
 } from 'typeorm';
 
 import { League } from '@modules/leagues/infra/typeorm/entities/League';
+
+import { Score } from './Score';
 
 @Entity('clubs')
 class Club {
@@ -30,6 +33,9 @@ class Club {
     inverseJoinColumns: [{ name: 'league_id' }],
   })
   leagues: League[];
+
+  @OneToMany(() => Score, score => score.club)
+  scores: Score[];
 
   @CreateDateColumn()
   created_at: Date;

@@ -6,6 +6,7 @@ interface IClubsRepository {
   save(club: Club): Promise<void>;
   findById(id: string): Promise<Club>;
   delete(id: string): Promise<void>;
+  getAllClubIds(): Promise<string[]>;
 }
 
 export { IClubsRepository };

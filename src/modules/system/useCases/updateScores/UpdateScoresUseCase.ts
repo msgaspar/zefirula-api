@@ -1,7 +1,8 @@
-import { inject, injectable } from 'tsyringe';
+import { container, inject, injectable } from 'tsyringe';
 
 import { IStatusParamsRepository } from '@modules/system/repositories/IStatusParamsRepository';
 import { ICartolaProvider } from '@shared/container/providers/CartolaProvider/ICartolaProvider';
+import { SyncClubScores } from '@utils/SyncClubScores';
 
 @injectable()
 class UpdateScoresUseCase {
@@ -20,9 +21,9 @@ class UpdateScoresUseCase {
     );
 
     if (currentRound !== systemCurrentRound) {
-      console.log('System needs update.');
-    } else {
-      console.log('System is up to date.');
+      const syncClubScores = container.resolve(SyncClubScores);
+      await syncClubScores.syncAll();
+      await this.statusParamsRepository.setParam('currentRound', currentRound.toString());
     }
   }
 }

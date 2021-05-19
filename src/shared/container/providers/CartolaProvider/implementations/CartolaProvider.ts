@@ -2,6 +2,7 @@ import axios from 'axios';
 
 import {
   ICartolaClubData,
+  ICartolaClubScore,
   ICartolaProvider,
   ICartolaSearchResult,
 } from '../ICartolaProvider';
@@ -28,6 +29,16 @@ class CartolaProvider implements ICartolaProvider {
   async getCurrentRound(): Promise<number> {
     const { data } = await axios.get(`https://api.cartolafc.globo.com/mercado/status`);
     return Number(data.rodada_atual);
+  }
+
+  async getScore(clubId: string, round: number): Promise<ICartolaClubScore> {
+    const { data } = await axios.get(
+      `https://api.cartolafc.globo.com/time/id/${clubId}/${round}`,
+    );
+    return {
+      score: data.time.patrocinador1_id || 0,
+      captainScore: data.time.patrocinador2_id || 0,
+    };
   }
 }
 

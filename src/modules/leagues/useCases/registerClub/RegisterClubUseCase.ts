@@ -1,9 +1,10 @@
-import { inject, injectable } from 'tsyringe';
+import { container, inject, injectable } from 'tsyringe';
 
 import { IClubsRepository } from '@modules/clubs/repositories/IClubsRepository';
 import { ILeaguesRepository } from '@modules/leagues/repositories/ILeaguesRepository';
 import { ICartolaProvider } from '@shared/container/providers/CartolaProvider/ICartolaProvider';
 import { AppError } from '@shared/errors/AppError';
+import { SyncClubScores } from '@utils/SyncClubScores';
 
 interface IRequest {
   leagueId: string;
@@ -24,24 +25,28 @@ class RegisterClubUseCase {
   ) {}
 
   async execute({ leagueId, clubId }: IRequest): Promise<void> {
+    const league = await this.leaguesRepository.findById(leagueId);
+
+    if (!league) {
+      throw new AppError('League not found');
+    }
+
     let club = await this.clubsRepository.findById(clubId);
 
     if (!club) {
       const { name, cartoleiro, badgeImgUrl } = await this.cartolaProvider.getClubData(
         clubId,
       );
+
       club = await this.clubsRepository.create({
         id: clubId,
         name,
         cartoleiro,
         badgeImgUrl,
       });
-    }
 
-    const league = await this.leaguesRepository.findById(leagueId);
-
-    if (!league) {
-      throw new AppError('League not found');
+      const syncClubScores = container.resolve(SyncClubScores);
+      await syncClubScores.sync(clubId);
     }
 
     if (club.leagues.some(l => l.id === league.id)) {

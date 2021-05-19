@@ -14,6 +14,14 @@ class StatusParamsRepository implements IStatusParamsRepository {
   async getParam(name: string): Promise<string> {
     return (await this.repository.findOne({ name }))?.value;
   }
+
+  async setParam(name: string, value: string): Promise<void> {
+    const param = this.repository.create({
+      name,
+      value,
+    });
+    await this.repository.save(param);
+  }
 }
 
 export { StatusParamsRepository };

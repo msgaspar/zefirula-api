@@ -34,6 +34,11 @@ class ClubsRepository implements IClubsRepository {
   async delete(id: string): Promise<void> {
     await this.repository.delete(id);
   }
+
+  async getAllClubIds(): Promise<string[]> {
+    const result = await this.repository.query('select id from clubs');
+    return result.map(item => item.id);
+  }
 }
 
 export { ClubsRepository };
