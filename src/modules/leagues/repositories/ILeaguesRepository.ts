@@ -15,6 +15,7 @@ interface ILeaguesRepository {
   findById(id: string): Promise<League>;
   listAll(): Promise<ILeagueListItem[]>;
   create({ name }: ICreateLeagueDTO): Promise<void>;
+  delete(id: string): Promise<void>;
 }
 
 export { ILeaguesRepository, ICreateLeagueDTO, ILeagueListItem };

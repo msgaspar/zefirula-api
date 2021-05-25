@@ -40,6 +40,10 @@ class LeaguesRepository implements ILeaguesRepository {
     const league = await this.repository.findOne(id, { relations: ['clubs'] });
     return league;
   }
+
+  async delete(id: string): Promise<void> {
+    await this.repository.delete(id);
+  }
 }
 
 export { LeaguesRepository };
