@@ -46,10 +46,11 @@ class GetLeagueUseCase {
     };
 
     response.clubs = league.clubs.map(async club => {
-      const { score, captain_score } = await this.scoresRepository.get(
-        club.id,
-        round || lastRound,
-      );
+      // const { score, captain_score } = await this.scoresRepository.get(
+      //   club.id,
+      //   round || lastRound,
+      // );
+      const [score, captain_score] = [0, 0];
       return {
         id: club.id,
         name: club.name,

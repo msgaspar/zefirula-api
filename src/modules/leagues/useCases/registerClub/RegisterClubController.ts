@@ -10,7 +10,7 @@ class RegisterClubController {
 
     const registerClubUseCase = container.resolve(RegisterClubUseCase);
 
-    await registerClubUseCase.execute({ clubId, leagueId });
+    await registerClubUseCase.execute({ clubId: String(clubId), leagueId });
 
     return response.status(201).send();
   }

@@ -33,6 +33,10 @@ class RegisterClubUseCase {
 
     let club = await this.clubsRepository.findById(clubId);
 
+    if (club?.leagues.some(l => l.id === league.id)) {
+      throw new AppError('Club is already registered in this league');
+    }
+
     if (!club) {
       const { name, cartoleiro, badgeImgUrl } = await this.cartolaProvider.getClubData(
         clubId,
@@ -47,10 +51,6 @@ class RegisterClubUseCase {
 
       const syncClubScores = container.resolve(SyncClubScores);
       await syncClubScores.sync(clubId);
-    }
-
-    if (club.leagues.some(l => l.id === league.id)) {
-      throw new AppError('Club is already registered in this league');
     }
 
     club.leagues.push(league);

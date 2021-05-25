@@ -36,8 +36,8 @@ class CartolaProvider implements ICartolaProvider {
       `https://api.cartolafc.globo.com/time/id/${clubId}/${round}`,
     );
     return {
-      score: data.time.patrocinador1_id || 0,
-      captainScore: data.time.patrocinador2_id || 0,
+      score: data.time.patrocinador1_id ?? 0,
+      captainScore: data.time.patrocinador2_id ?? 0,
     };
   }
 }
