@@ -5,6 +5,7 @@ import { IScoresRepository } from '@modules/clubs/repositories/IScoresRepository
 import { League } from '@modules/leagues/infra/typeorm/entities/League';
 import { ILeaguesRepository } from '@modules/leagues/repositories/ILeaguesRepository';
 import { IStatusParamsRepository } from '@modules/system/repositories/IStatusParamsRepository';
+import { AppError } from '@shared/errors/AppError';
 
 interface IClubLeagueResponse extends Club {
   score?: number;
@@ -32,9 +33,13 @@ class GetLeagueUseCase {
   async execute(id: string, round?: number): Promise<ILeagueResponse> {
     const league = await this.leaguesRepository.findById(id);
 
+    if (!league) {
+      throw new AppError('League not found', 404);
+    }
+
     let lastRound: number;
     if (!round) {
-      lastRound = Number(await this.statusParamsRepository.getParam('currentRound'));
+      lastRound = Number(await this.statusParamsRepository.getParam('currentRound')) - 1;
     }
 
     const response = {
@@ -46,11 +51,13 @@ class GetLeagueUseCase {
     };
 
     response.clubs = league.clubs.map(async club => {
-      // const { score, captain_score } = await this.scoresRepository.get(
-      //   club.id,
-      //   round || lastRound,
-      // );
-      const [score, captain_score] = [0, 0];
+      let [score, captain_score] = [0, 0];
+      const clubScore = await this.scoresRepository.get(club.id, round || lastRound);
+
+      if (clubScore) {
+        [score, captain_score] = [clubScore.score, clubScore.captain_score];
+      }
+
       return {
         id: club.id,
         name: club.name,

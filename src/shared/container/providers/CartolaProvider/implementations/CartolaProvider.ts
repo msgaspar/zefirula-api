@@ -35,9 +35,12 @@ class CartolaProvider implements ICartolaProvider {
     const { data } = await axios.get(
       `https://api.cartolafc.globo.com/time/id/${clubId}/${round}`,
     );
+    const capitainScore = data.atletas.find(
+      player => player.atleta_id === data.capitao_id,
+    ).pontos_num;
     return {
-      score: data.time.patrocinador1_id ?? 0,
-      captainScore: data.time.patrocinador2_id ?? 0,
+      score: data.pontos ?? 0,
+      captainScore: capitainScore ?? 0,
     };
   }
 }

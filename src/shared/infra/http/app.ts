@@ -39,7 +39,7 @@ app.use((err: Error, request: Request, response: Response, _next: NextFunction) 
 });
 
 const updateScoresController = new UpdateScoresController();
-cron.schedule('0,15,30,45 * * * *', () => {
+cron.schedule('* * * * *', () => {
   updateScoresController.handle();
 });
 
