@@ -63,8 +63,8 @@ class GetLeagueUseCase {
         name: club.name,
         cartoleiro: club.cartoleiro,
         badgeImgUrl: club.badgeImgUrl,
-        score,
-        captain_score,
+        score: Math.round(Number(score) * 100) / 100,
+        captain_score: Math.round(Number(captain_score) * 100) / 100,
       };
     });
 

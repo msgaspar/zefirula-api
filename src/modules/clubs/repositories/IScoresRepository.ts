@@ -5,6 +5,7 @@ interface IScoresRepository {
   findByClubId(clubId: string): Promise<Score[]>;
   create(data: ICreateScoreDTO): Promise<void>;
   get(clubId: string, round: number): Promise<Score>;
+  deleteAll(): Promise<void>;
 }
 
 export { IScoresRepository };

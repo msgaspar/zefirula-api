@@ -29,6 +29,10 @@ class ScoresRepository implements IScoresRepository {
     });
     await this.repository.save(newScore);
   }
+
+  async deleteAll(): Promise<void> {
+    await this.repository.createQueryBuilder().delete().execute();
+  }
 }
 
 export { ScoresRepository };
