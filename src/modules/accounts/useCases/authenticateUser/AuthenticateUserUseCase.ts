@@ -52,7 +52,7 @@ class AuthenticateUserUseCase {
     const passwordMatch = await compare(password, user.password);
 
     if (!passwordMatch) {
-      throw new AppError('Invalid username or password', 403);
+      throw new AppError('Invalid username or password', 401);
     }
 
     const token = sign({}, jwt_secret, {
