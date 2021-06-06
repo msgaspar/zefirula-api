@@ -37,9 +37,11 @@ class GetLeagueUseCase {
       throw new AppError('League not found', 404);
     }
 
-    let lastRound: number;
-    if (!round) {
-      lastRound = Number(await this.statusParamsRepository.getParam('currentRound')) - 1;
+    const lastRound =
+      Number(await this.statusParamsRepository.getParam('currentRound')) - 1;
+
+    if (round !== undefined && (round > lastRound || round < 1)) {
+      throw new AppError('Invalid round');
     }
 
     const response = {
@@ -47,16 +49,15 @@ class GetLeagueUseCase {
       id: league.id,
       created_at: league.created_at,
       round: round || lastRound,
+      lastRound,
       clubs: [],
     };
 
     response.clubs = league.clubs.map(async club => {
-      let [score, captain_score] = [0, 0];
-      const clubScore = await this.scoresRepository.get(club.id, round || lastRound);
-
-      if (clubScore) {
-        [score, captain_score] = [clubScore.score, clubScore.captain_score];
-      }
+      const { score, captain_score } = await this.scoresRepository.get(
+        club.id,
+        round || lastRound,
+      );
 
       return {
         id: club.id,
