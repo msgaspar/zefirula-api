@@ -2,7 +2,6 @@ import { Router } from 'express';
 
 import { CreateLeagueController } from '@modules/leagues/useCases/createLeague/CreateLeagueController';
 import { DeleteLeagueController } from '@modules/leagues/useCases/deleteLeague/DeleteLeagueController';
-import { DownloadLeagueCsvController } from '@modules/leagues/useCases/downloadLeagueCsv/DownloadLeagueCsvController';
 import { GetLeagueController } from '@modules/leagues/useCases/getLeague/GetLeagueController';
 import { ListLeaguesController } from '@modules/leagues/useCases/listLeagues/ListLeaguesController';
 import { RegisterClubController } from '@modules/leagues/useCases/registerClub/RegisterClubController';
@@ -19,7 +18,6 @@ const registerClubController = new RegisterClubController();
 const removeClubController = new RemoveClubController();
 const getLeagueController = new GetLeagueController();
 const deleteLeagueController = new DeleteLeagueController();
-const downloadLeagueCsvController = new DownloadLeagueCsvController();
 
 leaguesRoutes.use(ensureAuthenticated, ensureAdmin);
 leaguesRoutes.post('/', createLeagueController.handle);
@@ -29,6 +27,5 @@ leaguesRoutes.delete('/:leagueId/:clubId', removeClubController.handle);
 leaguesRoutes.get('/:leagueId/', getLeagueController.handle);
 leaguesRoutes.get('/:leagueId/:round', getLeagueController.handle);
 leaguesRoutes.delete('/:leagueId', deleteLeagueController.handle);
-leaguesRoutes.get('/:leagueId/:round/download', downloadLeagueCsvController.handle);
 
 export { leaguesRoutes };
