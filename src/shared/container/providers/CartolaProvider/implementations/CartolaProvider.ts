@@ -37,7 +37,7 @@ class CartolaProvider implements ICartolaProvider {
     );
     const capitainScore = data.atletas.find(
       player => player.atleta_id === data.capitao_id,
-    ).pontos_num;
+    )?.pontos_num;
     return {
       score: data.pontos ?? 0,
       captainScore: capitainScore ?? 0,
