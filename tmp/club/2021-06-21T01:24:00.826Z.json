@@ -1,0 +1,578 @@
+{
+    "clubes": {
+        "262": {
+            "id": 262,
+            "nome": "Flamengo",
+            "abreviacao": "FLA",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2018/04/09/Flamengo-65.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2018/04/09/Flamengo-45.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2018/04/09/Flamengo-30.png"
+            },
+            "nome_fantasia": "Flamengo"
+        },
+        "264": {
+            "id": 264,
+            "nome": "Corinthians",
+            "abreviacao": "COR",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2019/09/30/Corinthians_65.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2019/09/30/Corinthians_45.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2019/09/30/Corinthians_30.png"
+            },
+            "nome_fantasia": "Corinthians"
+        },
+        "265": {
+            "id": 265,
+            "nome": "Bahia",
+            "abreviacao": "BAH",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/bahia_60x60.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/bahia_45x45.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/bahia_30x30.png"
+            },
+            "nome_fantasia": "Bahia"
+        },
+        "266": {
+            "id": 266,
+            "nome": "Fluminense",
+            "abreviacao": "FLU",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/fluminense_60x60.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/fluminense_45x45.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2015/01/12/Fluminense-escudo.png"
+            },
+            "nome_fantasia": "Fluminense"
+        },
+        "275": {
+            "id": 275,
+            "nome": "Palmeiras",
+            "abreviacao": "PAL",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/palmeiras_60x60.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/palmeiras_45x45.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/palmeiras_30x30.png"
+            },
+            "nome_fantasia": "Palmeiras"
+        },
+        "276": {
+            "id": 276,
+            "nome": "São Paulo",
+            "abreviacao": "SAO",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/sao_paulo_60x60.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/sao_paulo_45x45.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/sao_paulo_30x30.png"
+            },
+            "nome_fantasia": "São Paulo"
+        },
+        "277": {
+            "id": 277,
+            "nome": "Santos",
+            "abreviacao": "SAN",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/santos_60x60.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/santos_45x45.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/santos_30x30.png"
+            },
+            "nome_fantasia": "Santos"
+        },
+        "280": {
+            "id": 280,
+            "nome": "Bragantino",
+            "abreviacao": "BGT",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2020/01/01/65.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2020/01/01/45.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2020/01/01/30.png"
+            },
+            "nome_fantasia": "Bragantino"
+        },
+        "282": {
+            "id": 282,
+            "nome": "Atlético-MG",
+            "abreviacao": "CAM",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2017/11/23/Atletico-Mineiro-escudo65px.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2017/11/23/Atletico-Mineiro-escudo45px.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2017/11/23/Atletico-Mineiro-escudo30px.png"
+            },
+            "nome_fantasia": "Atlético-MG"
+        },
+        "284": {
+            "id": 284,
+            "nome": "Grêmio",
+            "abreviacao": "GRE",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/gremio_60x60.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/gremio_45x45.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/14/gremio_30x30.png"
+            },
+            "nome_fantasia": "Grêmio"
+        },
+        "285": {
+            "id": 285,
+            "nome": "Internacional",
+            "abreviacao": "INT",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2016/05/03/inter65.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2016/05/03/inter45.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2016/05/03/inter30.png"
+            },
+            "nome_fantasia": "Internacional"
+        },
+        "286": {
+            "id": 286,
+            "nome": "Juventude",
+            "abreviacao": "JUV",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2021/04/29/juventude65.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2021/04/29/juventude45.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2021/04/29/juventude30.png"
+            },
+            "nome_fantasia": "Juventude"
+        },
+        "292": {
+            "id": 292,
+            "nome": "Sport",
+            "abreviacao": "SPT",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2015/07/21/sport65.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2015/07/21/sport45.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2015/07/21/sport30.png"
+            },
+            "nome_fantasia": "Sport"
+        },
+        "293": {
+            "id": 293,
+            "nome": "Athlético-PR",
+            "abreviacao": "CAP",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2019/09/09/Athletico-PR-65x65.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2019/09/09/Athletico-PR-45x45.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2019/09/09/Athletico-PR-30x30.png"
+            },
+            "nome_fantasia": "Athlético-PR"
+        },
+        "315": {
+            "id": 315,
+            "nome": "Chapecoense",
+            "abreviacao": "CHA",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2015/08/03/Escudo-Chape-165.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2015/08/03/Escudo-Chape-145.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2015/08/03/Escudo-Chape-130.png"
+            },
+            "nome_fantasia": "Chapecoense"
+        },
+        "327": {
+            "id": 327,
+            "nome": "América-MG",
+            "abreviacao": "AME",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2019/02/28/escudo65_1.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2019/02/28/escudo45_1.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2019/02/28/escudo30.png"
+            },
+            "nome_fantasia": "América-MG"
+        },
+        "354": {
+            "id": 354,
+            "nome": "Ceará",
+            "abreviacao": "CEA",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2019/10/10/ceara-65x65.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2019/10/10/ceara-45x45.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2019/10/10/ceara-30x30.png"
+            },
+            "nome_fantasia": "Ceará"
+        },
+        "356": {
+            "id": 356,
+            "nome": "Fortaleza",
+            "abreviacao": "FOR",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2018/06/10/fortaleza-ec-65px.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2018/06/10/fortaleza-ec-45px.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2018/06/10/fortaleza-ec-30px.png"
+            },
+            "nome_fantasia": "Fortaleza"
+        },
+        "373": {
+            "id": 373,
+            "nome": "Atlético-GO",
+            "abreviacao": "ACG",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2020/07/02/atletico-go-2020-65.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2020/07/02/atletico-go-2020-45.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2020/07/02/atletico-go-2020-30.png"
+            },
+            "nome_fantasia": "Atlético-GO"
+        },
+        "1371": {
+            "id": 1371,
+            "nome": "Cuiabá",
+            "abreviacao": "CUI",
+            "escudos": {
+                "60x60": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/16/cuiaba65.png",
+                "45x45": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/16/cuiaba45.png",
+                "30x30": "https://s.glbimg.com/es/sde/f/organizacoes/2014/04/16/cuiaba30_.png"
+            },
+            "nome_fantasia": "Cuiabá"
+        }
+    },
+    "posicoes": {
+        "1": {
+            "id": 1,
+            "nome": "Goleiro",
+            "abreviacao": "gol"
+        },
+        "2": {
+            "id": 2,
+            "nome": "Lateral",
+            "abreviacao": "lat"
+        },
+        "3": {
+            "id": 3,
+            "nome": "Zagueiro",
+            "abreviacao": "zag"
+        },
+        "4": {
+            "id": 4,
+            "nome": "Meia",
+            "abreviacao": "mei"
+        },
+        "5": {
+            "id": 5,
+            "nome": "Atacante",
+            "abreviacao": "ata"
+        },
+        "6": {
+            "id": 6,
+            "nome": "Técnico",
+            "abreviacao": "tec"
+        }
+    },
+    "status": {
+        "2": {
+            "id": 2,
+            "nome": "Dúvida"
+        },
+        "3": {
+            "id": 3,
+            "nome": "Suspenso"
+        },
+        "5": {
+            "id": 5,
+            "nome": "Contundido"
+        },
+        "6": {
+            "id": 6,
+            "nome": "Nulo"
+        },
+        "7": {
+            "id": 7,
+            "nome": "Provável"
+        }
+    },
+    "atletas": [
+        {
+            "scout": null,
+            "atleta_id": 68952,
+            "rodada_id": 4,
+            "clube_id": 277,
+            "posicao_id": 5,
+            "status_id": 7,
+            "pontos_num": 0,
+            "preco_num": 17.8,
+            "variacao_num": -0.28,
+            "media_num": 5.3,
+            "jogos_num": 4,
+            "slug": "",
+            "apelido": "Marinho",
+            "apelido_abreviado": "Marinho",
+            "nome": "Mário Sérgio Santos Costa",
+            "foto": "https://s.glbimg.com/es/sde/f/2021/05/04/ed157c234599d01c370049565c5fa3a8_FORMATO.png"
+        },
+        {
+            "scout": null,
+            "atleta_id": 109963,
+            "rodada_id": 4,
+            "clube_id": 275,
+            "posicao_id": 3,
+            "status_id": 7,
+            "pontos_num": 0,
+            "preco_num": 4.13,
+            "variacao_num": 1.69,
+            "media_num": 1.9,
+            "jogos_num": 3,
+            "slug": "",
+            "apelido": "Renan",
+            "apelido_abreviado": "Renan",
+            "nome": "Renan Victor da Silva",
+            "foto": "https://s.glbimg.com/es/sde/f/2021/04/30/92b66aba04ea5083353534256f6eaf76_FORMATO.png"
+        },
+        {
+            "scout": null,
+            "atleta_id": 87999,
+            "rodada_id": 4,
+            "clube_id": 275,
+            "posicao_id": 4,
+            "status_id": 7,
+            "pontos_num": 0,
+            "preco_num": 13.25,
+            "variacao_num": 1.93,
+            "media_num": 7.45,
+            "jogos_num": 4,
+            "slug": "",
+            "apelido": "Gustavo Scarpa",
+            "apelido_abreviado": "G. Scarpa",
+            "nome": "Gustavo Henrique Furtado Scarpa",
+            "foto": "https://s.glbimg.com/es/sde/f/2021/04/30/e594285e6781941b0f08b58d66d6669e_FORMATO.png"
+        },
+        {
+            "scout": null,
+            "atleta_id": 87228,
+            "rodada_id": 4,
+            "clube_id": 282,
+            "posicao_id": 2,
+            "status_id": 7,
+            "pontos_num": 0,
+            "preco_num": 8.89,
+            "variacao_num": -0.24,
+            "media_num": 4,
+            "jogos_num": 3,
+            "slug": "",
+            "apelido": "Guilherme Arana",
+            "apelido_abreviado": "G. Arana",
+            "nome": "Guilherme Antonio Arana Lopes",
+            "foto": "https://s.glbimg.com/es/sde/f/2021/05/02/282a160d63e94aaad12311a7c3bbf3f0_FORMATO.png"
+        },
+        {
+            "scout": null,
+            "atleta_id": 86410,
+            "rodada_id": 4,
+            "clube_id": 275,
+            "posicao_id": 2,
+            "status_id": 7,
+            "pontos_num": 0,
+            "preco_num": 6.78,
+            "variacao_num": 1.3,
+            "media_num": 3.42,
+            "jogos_num": 4,
+            "slug": "",
+            "apelido": "Victor Luis",
+            "apelido_abreviado": "V. Luis",
+            "nome": "Victor Luis Chuab Zamblauskas",
+            "foto": "https://s.glbimg.com/es/sde/f/2021/03/04/64c9033e0685a9f6d0a2c85b15f89242_FORMATO.png"
+        },
+        {
+            "scout": null,
+            "atleta_id": 85931,
+            "rodada_id": 4,
+            "clube_id": 282,
+            "posicao_id": 4,
+            "status_id": 7,
+            "pontos_num": 0,
+            "preco_num": 6.27,
+            "variacao_num": -0.83,
+            "media_num": 2.5,
+            "jogos_num": 4,
+            "slug": "",
+            "apelido": "Hyoran",
+            "apelido_abreviado": "Hyoran",
+            "nome": "Hyoran Kaue Dalmoro",
+            "foto": "https://s.glbimg.com/es/sde/f/2021/05/02/e2c30f1b805361db449b22bb503103ff_FORMATO.png"
+        },
+        {
+            "scout": null,
+            "atleta_id": 92496,
+            "rodada_id": 4,
+            "clube_id": 280,
+            "posicao_id": 4,
+            "status_id": 7,
+            "pontos_num": 0,
+            "preco_num": 6.9,
+            "variacao_num": 1.65,
+            "media_num": 6.45,
+            "jogos_num": 2,
+            "slug": "",
+            "apelido": "Raul",
+            "apelido_abreviado": "Raul",
+            "nome": "Raul Lô Gonçalves",
+            "foto": "https://s.glbimg.com/es/sde/f/2020/08/28/8c0a624b6d2595beaf51682261e51ccd_FORMATO.png"
+        },
+        {
+            "scout": null,
+            "atleta_id": 72290,
+            "rodada_id": 4,
+            "clube_id": 275,
+            "posicao_id": 1,
+            "status_id": 7,
+            "pontos_num": 0,
+            "preco_num": 5.67,
+            "variacao_num": 1.73,
+            "media_num": 3.83,
+            "jogos_num": 3,
+            "slug": "",
+            "apelido": "Jailson",
+            "apelido_abreviado": "Jailson",
+            "nome": "Jailson Marcelino dos Santos",
+            "foto": "https://s.glbimg.com/es/sde/f/2021/04/30/94db6452b351c75eb6cdede0dfc63718_FORMATO.png"
+        },
+        {
+            "scout": null,
+            "atleta_id": 103088,
+            "rodada_id": 4,
+            "clube_id": 285,
+            "posicao_id": 3,
+            "status_id": 7,
+            "pontos_num": 0,
+            "preco_num": 0.74,
+            "variacao_num": 0,
+            "media_num": -1.5,
+            "jogos_num": 2,
+            "slug": "",
+            "apelido": "Lucas Ribeiro",
+            "apelido_abreviado": "L. Ribeiro",
+            "nome": "Lucas Ribeiro dos Santos",
+            "foto": "https://s.glbimg.com/es/sde/f/2021/05/02/71fa8472e2a7bf196c18bf4ec36ab886_FORMATO.png"
+        },
+        {
+            "scout": null,
+            "atleta_id": 77552,
+            "rodada_id": 4,
+            "clube_id": 285,
+            "posicao_id": 6,
+            "status_id": 7,
+            "pontos_num": 0,
+            "preco_num": 5.96,
+            "variacao_num": -0.28,
+            "media_num": 3.19,
+            "jogos_num": 2,
+            "slug": "",
+            "apelido": "Osmar Loss",
+            "apelido_abreviado": "O. Loss",
+            "nome": "Osmar Loss Vieira",
+            "foto": "https://s.glbimg.com/es/sde/f/2021/06/11/7f55e9f89afdc96219efcb10b10d6b36_FORMATO.png"
+        },
+        {
+            "scout": null,
+            "atleta_id": 78435,
+            "rodada_id": 4,
+            "clube_id": 262,
+            "posicao_id": 5,
+            "status_id": 7,
+            "pontos_num": 0,
+            "preco_num": 8.89,
+            "variacao_num": 0,
+            "media_num": 7.55,
+            "jogos_num": 2,
+            "slug": "",
+            "apelido": "Vitinho",
+            "apelido_abreviado": "Vitinho",
+            "nome": "Victor Vinícius Coelho dos Santos",
+            "foto": "https://s.glbimg.com/es/sde/f/2021/05/01/4fafe8587e4964a63ebac8db0a7335c5_FORMATO.png"
+        },
+        {
+            "scout": null,
+            "atleta_id": 39148,
+            "rodada_id": 4,
+            "clube_id": 282,
+            "posicao_id": 5,
+            "status_id": 7,
+            "pontos_num": 0,
+            "preco_num": 20.27,
+            "variacao_num": 0.63,
+            "media_num": 8.17,
+            "jogos_num": 4,
+            "slug": "",
+            "apelido": "Hulk",
+            "apelido_abreviado": "Hulk",
+            "nome": "Givanildo Vieira de Souza",
+            "foto": "https://s.glbimg.com/es/sde/f/2021/04/23/d9ed7fa34aa12e4ce8768c9c2a2b4560_FORMATO.png"
+        }
+    ],
+    "reservas": [
+        {
+            "scout": null,
+            "atleta_id": 104127,
+            "rodada_id": 4,
+            "clube_id": 265,
+            "posicao_id": 2,
+            "status_id": 7,
+            "pontos_num": 0,
+            "preco_num": 4.23,
+            "variacao_num": 0.07,
+            "media_num": 1.13,
+            "jogos_num": 4,
+            "slug": "",
+            "apelido": "Renan Guedes",
+            "apelido_abreviado": "R. Guedes",
+            "nome": "Renan Guedes Borges",
+            "foto": "https://s.glbimg.com/es/sde/f/2021/05/17/7b8f9a7c877335256edb33fa8255274c_FORMATO.png"
+        },
+        {
+            "scout": null,
+            "atleta_id": 82407,
+            "rodada_id": 4,
+            "clube_id": 286,
+            "posicao_id": 4,
+            "status_id": 7,
+            "pontos_num": 0,
+            "preco_num": 5.85,
+            "variacao_num": 0.42,
+            "media_num": 1.97,
+            "jogos_num": 4,
+            "slug": "",
+            "apelido": "Chico",
+            "apelido_abreviado": "Chico",
+            "nome": "Francisco Hyun Sol Kim",
+            "foto": "https://s.glbimg.com/es/sde/f/2021/04/30/5638d9577d3da1016e551a5fcf125e7b_FORMATO.png"
+        }
+    ],
+    "time": {
+        "temporada_inicial": 2011,
+        "nome_cartola": "Rodrigo Adler",
+        "cor_camisa": "ff241d",
+        "cor_borda_escudo": "cccccc",
+        "foto_perfil": "https://s3.glbimg.com/v1/AUTH_58d78b787ec34892b5aaa0c7a146155f/placeholder/perfil.png",
+        "cor_fundo_escudo": "000000",
+        "globo_id": "4831a393-64e8-421b-b6fe-63d9186a093d",
+        "nome": " ADLER UNITED",
+        "url_escudo_svg": "https://s3.glbimg.com/v1/AUTH_58d78b787ec34892b5aaa0c7a146155f/cartola_svg_185/escudo/3d/32/56/004831a393-64e8-421b-b6fe-63d9186a093d20210429163256",
+        "url_escudo_png": "https://s2.glbimg.com/n4hCyPXe4JE2qoRcs-_OFxrP9Ik=/https://s3.glbimg.com/v1/AUTH_58d78b787ec34892b5aaa0c7a146155f/cartola_svg_185/escudo/3d/32/56/004831a393-64e8-421b-b6fe-63d9186a093d20210429163256",
+        "url_camisa_svg": "https://s3.glbimg.com/v1/AUTH_58d78b787ec34892b5aaa0c7a146155f/cartola_svg_185/camisa/3d/32/56/004831a393-64e8-421b-b6fe-63d9186a093d20210429163256",
+        "url_camisa_png": "https://s2.glbimg.com/fzBHBhaPF6lrsseboRivN7ZJ7KM=/https://s3.glbimg.com/v1/AUTH_58d78b787ec34892b5aaa0c7a146155f/cartola_svg_185/camisa/3d/32/56/004831a393-64e8-421b-b6fe-63d9186a093d20210429163256",
+        "slug": "adler-united",
+        "cor_primaria_estampa_escudo": "ff241d",
+        "cor_secundaria_estampa_escudo": "000000",
+        "sorteio_pro_num": null,
+        "cor_primaria_estampa_camisa": "ffffff",
+        "cor_secundaria_estampa_camisa": "000000",
+        "rodada_time_id": 5,
+        "facebook_id": 100000508171549,
+        "tipo_camisa": 1,
+        "tipo_escudo": 1,
+        "time_id": 209491,
+        "tipo_adorno": 3,
+        "esquema_id": 3,
+        "tipo_estampa_camisa": 1,
+        "tipo_estampa_escudo": 4,
+        "patrocinador1_id": 62,
+        "clube_id": 276,
+        "patrocinador2_id": 67,
+        "lgpd_quarentena": false,
+        "assinante": true,
+        "simplificado": false,
+        "cadastro_completo": true,
+        "lgpd_removido": false
+    },
+    "pontos_campeonato": 191.6201171875,
+    "capitao_id": 39148,
+    "pontos": 56.93994140625,
+    "esquema_id": 3,
+    "rodada_atual": 5,
+    "patrimonio": 107.63,
+    "valor_time": 0
+}

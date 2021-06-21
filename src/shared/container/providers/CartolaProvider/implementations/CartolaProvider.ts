@@ -1,4 +1,5 @@
 import axios from 'axios';
+import fs from 'fs';
 
 import {
   ICartolaClubData,
@@ -42,6 +43,43 @@ class CartolaProvider implements ICartolaProvider {
       score: data.pontos ?? 0,
       captainScore: capitainScore ?? 0,
     };
+  }
+
+  async getMarketStatus(): Promise<number> {
+    const { data } = await axios.get(`https://api.cartolafc.globo.com/mercado/status`);
+    return Number(data.status_mercado);
+  }
+
+  async saveResponseFiles(): Promise<void> {
+    const statusResponse = await axios.get(
+      `https://api.cartolafc.globo.com/mercado/status`,
+    );
+    const clubResponse = await axios.get(
+      `https://api.cartolafc.globo.com/time/id/209491`,
+    );
+    const timestamp = new Date();
+    fs.writeFile(
+      `./tmp/status/${timestamp.toISOString()}.json`,
+      JSON.stringify(statusResponse.data, null, 4),
+      'utf8',
+      err => {
+        if (err) {
+          console.log(err);
+        }
+        console.log('saved');
+      },
+    );
+    fs.writeFile(
+      `./tmp/club/${timestamp.toISOString()}.json`,
+      JSON.stringify(clubResponse.data, null, 4),
+      'utf8',
+      err => {
+        if (err) {
+          console.log(err);
+        }
+        console.log('saved');
+      },
+    );
   }
 }
 

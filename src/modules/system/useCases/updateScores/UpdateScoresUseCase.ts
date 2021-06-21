@@ -15,12 +15,15 @@ class UpdateScoresUseCase {
   ) {}
 
   async execute(): Promise<void> {
+    await this.cartolaProvider.saveResponseFiles();
     const currentRound = await this.cartolaProvider.getCurrentRound();
     const systemCurrentRound = Number(
       await this.statusParamsRepository.getParam('currentRound'),
     );
+    const marketStatus = await this.cartolaProvider.getMarketStatus();
 
-    if (currentRound !== systemCurrentRound) {
+    if (currentRound !== systemCurrentRound && marketStatus === 1) {
+      await this.cartolaProvider.saveResponseFiles();
       const syncClubScores = container.resolve(SyncClubScores);
       await syncClubScores.syncAll();
       await this.statusParamsRepository.setParam('currentRound', currentRound.toString());

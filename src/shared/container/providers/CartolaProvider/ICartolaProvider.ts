@@ -20,6 +20,8 @@ interface ICartolaProvider {
   searchClubs(query: string): Promise<ICartolaSearchResult[]>;
   getCurrentRound(): Promise<number>;
   getScore(clubId: string, round: number): Promise<ICartolaClubScore>;
+  getMarketStatus(): Promise<number>;
+  saveResponseFiles(): Promise<void>;
 }
 
 export { ICartolaProvider, ICartolaClubData, ICartolaSearchResult, ICartolaClubScore };
