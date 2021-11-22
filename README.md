@@ -14,41 +14,29 @@ Uma API para criar e gerenciar ligas personalizadas do jogo CartolaFC, com atual
 
 ## Executando o projeto localmente
 
-### É necessário ter instalado
+#### É necessário ter instalado
 
 - [Node.js](https://nodejs.org/en/)
 - [Yarn](https://classic.yarnpkg.com/) ou [npm](https://www.npmjs.com/)
 - [Git](https://git-scm.com/)
 - [Docker](https://www.docker.com/) e [Docker Compose](https://github.com/docker/compose)
 
-### Execução com Docker Compose
+#### Siga os passos abaixo
 
-1. Clone o repositório:
 
-```
-git clone https://github.com/msgaspar/zefirula-api.git
-```
+```bash
+# Clone o repositorio
+$ git clone https://github.com/msgaspar/zefirula-api.git
 
-2. Entre no diretório do projeto:
+# Entre no diretório do projeto:
+$ cd zefirula-api
 
-```
-cd zefirula-api
-```
+# Instale as dependências
+$ yarn
 
-3. Instale as dependências
+# Crie na raiz do projeto uma cópia do arquivo ormconfig.example.json com o nome ormconfig.json:
+$ cp ormconfig.example.json ormconfig.json
 
-```
-yarn
-```
-
-4. Crie na raiz do projeto uma cópia do arquivo ormconfig.example.json com o nome ormconfig.json:
-
-```
-cp ormconfig.example.json ormconfig.json
-```
-
-5. Inicie a aplicação usando o Docker Compose:
-
-```
-docker-compose up
+# Inicie a aplicação usando o Docker Compose:
+$ docker-compose up
 ```
