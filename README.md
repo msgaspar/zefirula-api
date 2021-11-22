@@ -21,6 +21,8 @@ Uma API para criar e gerenciar ligas personalizadas do jogo CartolaFC, com atual
 - [Git](https://git-scm.com/)
 - [Docker](https://www.docker.com/) e [Docker Compose](https://github.com/docker/compose)
 
+### Execução com Docker Compose
+
 1. Clone o repositório:
 
 ```
