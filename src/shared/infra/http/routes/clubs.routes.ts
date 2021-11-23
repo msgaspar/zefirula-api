@@ -6,7 +6,6 @@ import { ResetAllScoresController } from '@modules/system/useCases/resetAllScore
 
 import { ensureAdmin } from '../middlewares/ensureAdmin';
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
-import { updateScores } from '../middlewares/updateScores';
 
 const clubsRoutes = Router();
 
@@ -16,7 +15,7 @@ const resetAllScoresController = new ResetAllScoresController();
 
 clubsRoutes.use(ensureAuthenticated, ensureAdmin);
 clubsRoutes.post('/', createClubController.handle);
-clubsRoutes.get('/search', updateScores, searchClubsController.handle);
+clubsRoutes.get('/search', searchClubsController.handle);
 clubsRoutes.delete('/scores', resetAllScoresController.handle);
 
 export { clubsRoutes };
