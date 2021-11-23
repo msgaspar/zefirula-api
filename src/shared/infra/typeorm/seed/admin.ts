@@ -7,7 +7,7 @@ async function create() {
   const connection = await createConnection();
 
   const id = uuidV4();
-  const password = await hash('admin', 8);
+  const password = await hash('senha123', 8);
 
   await connection.query(
     `INSERT INTO users (id, name, username, password, "isAdmin") 
