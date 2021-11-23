@@ -5,7 +5,7 @@ import { AppError } from '@shared/errors/AppError';
 
 async function ensureAdmin(
   request: Request,
-  response: Response,
+  _response: Response,
   next: NextFunction,
 ): Promise<void> {
   const { id } = request.user;
