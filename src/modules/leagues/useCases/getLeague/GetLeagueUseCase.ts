@@ -37,8 +37,7 @@ class GetLeagueUseCase {
       throw new AppError('League not found', 404);
     }
 
-    const lastRound =
-      Number(await this.statusParamsRepository.getParam('currentRound')) - 1;
+    const lastRound = Number(await this.statusParamsRepository.getParam('currentRound'));
 
     if (round !== undefined && (round > lastRound || round < 1)) {
       throw new AppError('Invalid round');
