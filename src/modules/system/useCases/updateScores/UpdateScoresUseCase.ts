@@ -21,7 +21,7 @@ class UpdateScoresUseCase {
     );
     const marketStatus = await this.cartolaProvider.getMarketStatus();
 
-    if (currentRound !== systemCurrentRound && marketStatus === 1) {
+    if (currentRound !== systemCurrentRound && marketStatus === (1 || 6)) {
       const syncClubScores = container.resolve(SyncClubScores);
       await syncClubScores.syncAll();
       await this.statusParamsRepository.setParam('currentRound', currentRound.toString());
