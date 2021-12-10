@@ -9,7 +9,6 @@ import { RemoveClubController } from '@modules/leagues/useCases/removeClub/Remov
 import { ensureAuthenticated } from '@shared/infra/http/middlewares/ensureAuthenticated';
 
 import { ensureAdmin } from '../middlewares/ensureAdmin';
-import { updateScores } from '../middlewares/updateScores';
 
 const leaguesRoutes = Router();
 
@@ -22,10 +21,10 @@ const deleteLeagueController = new DeleteLeagueController();
 
 leaguesRoutes.use(ensureAuthenticated, ensureAdmin);
 leaguesRoutes.post('/', createLeagueController.handle);
-leaguesRoutes.get('/', updateScores, listLeaguesController.handle);
+leaguesRoutes.get('/', listLeaguesController.handle);
 leaguesRoutes.post('/:leagueId', registerClubController.handle);
 leaguesRoutes.delete('/:leagueId/:clubId', removeClubController.handle);
-leaguesRoutes.get('/:leagueId/', updateScores, getLeagueController.handle);
+leaguesRoutes.get('/:leagueId/', getLeagueController.handle);
 leaguesRoutes.get('/:leagueId/:round', getLeagueController.handle);
 leaguesRoutes.delete('/:leagueId', deleteLeagueController.handle);
 
