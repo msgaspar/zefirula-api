@@ -19,9 +19,9 @@ class UpdateScoresUseCase {
     const systemCurrentRound = Number(
       await this.statusParamsRepository.getParam('currentRound'),
     );
-    const marketStatus = await this.cartolaProvider.getMarketStatus();
+    // const marketStatus = await this.cartolaProvider.getMarketStatus();
 
-    if (currentRound !== systemCurrentRound && marketStatus === (1 || 6)) {
+    if (currentRound !== systemCurrentRound) {
       const syncClubScores = container.resolve(SyncClubScores);
       await syncClubScores.syncAll();
       await this.statusParamsRepository.setParam('currentRound', currentRound.toString());
