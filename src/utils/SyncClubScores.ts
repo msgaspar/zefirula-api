@@ -40,7 +40,7 @@ export class SyncClubScores {
     clubIds.forEach(async clubId => {
       const clubScores = await this.scoresRepository.findByClubId(clubId);
 
-      for (let round = 1; round < currentRound; round += 1) {
+      for (let round = 1; round <= currentRound; round += 1) {
         if (!clubScores.find(scoreItem => scoreItem.round === round)) {
           const { score, captainScore } = await this.cartolaProvider.getScore(
             clubId,
