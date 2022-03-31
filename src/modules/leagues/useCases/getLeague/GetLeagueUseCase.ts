@@ -39,7 +39,7 @@ class GetLeagueUseCase {
 
     const lastRound = Number(await this.statusParamsRepository.getParam('currentRound'));
 
-    if (round !== undefined && (round > lastRound || round < 1)) {
+    if (round !== undefined && round > lastRound) {
       throw new AppError('Invalid round');
     }
 
