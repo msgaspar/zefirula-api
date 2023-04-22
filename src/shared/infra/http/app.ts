@@ -14,11 +14,12 @@ import { router } from './routes';
 createConnection();
 const app = express();
 
-app.use(rateLimiter);
+//app.use(rateLimiter);
 
 app.use(express.json());
 
-app.use(cors());
+app.use(cors({ origin: '*' }));
+app.options('*', cors());
 app.use(router);
 
 app.use((err: Error, _request: Request, response: Response, _next: NextFunction) => {
